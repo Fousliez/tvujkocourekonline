@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Srdíčkový web – rudý</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --red: #b11226;
+  --red-dark: #7e0c1a;
+  --bg: #fff5f6;
+  --text: #2b2b2b;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  overflow-x: hidden;
+}
+
+/* ====== PLUJÍCÍ SRDÍČKA ====== */
+.hearts {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.heart {
+  position: absolute;
+  bottom: -40px;
+  font-size: 22px;
+  color: rgba(177,18,38,0.35);
+  animation: floatUp linear infinite;
+}
+
+@keyframes floatUp {
+  from {
+    transform: translateY(0) scale(1);
+    opacity: 0;
+  }
+  10% { opacity: 1; }
+  to {
+    transform: translateY(-120vh) scale(1.4);
+    opacity: 0;
+  }
+}
+
+/* ====== HEADER ====== */
+header {
+  position: relative;
+  z-index: 1;
+  background: linear-gradient(135deg, var(--red), var(--red-dark));
+  color: #fff;
+  padding: 90px 20px;
+  text-align: center;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 44px;
+  font-weight: 600;
+}
+
+header p {
+  margin-top: 16px;
+  font-size: 18px;
+  opacity: 0.95;
+}
+
+/* ====== SEKCE ====== */
+section {
+  position: relative;
+  z-index: 1;
+  max-width: 1100px;
+  margin: 90px auto;
+  padding: 0 20px;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px,1fr));
+  gap: 30px;
+}
+
+.card {
+  background: #fff;
+  border-radius: 22px;
+  padding: 32px;
+  box-shadow: 0 14px 35px rgba(0,0,0,0.1);
+  position: relative;
+}
+
+.card::after {
+  content: "❤ ❤";
+  position: absolute;
+  bottom: 18px;
+  right: 20px;
+  color: var(--red);
+  opacity: 0.35;
+  font-size: 18px;
+}
+
+.card h3 {
+  margin-top: 0;
+  font-weight: 600;
+}
+
+/* ====== CTA ====== */
+.cta {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  margin: 120px 20px;
+}
+
+.cta a {
+  display: inline-block;
+  padding: 18px 48px;
+  background: var(--red);
+  color: #fff;
+  text-decoration: none;
+  border-radius: 50px;
+  font-weight: 600;
+  box-shadow: 0 10px 30px rgba(177,18,38,0.4);
+  transition: transform .2s, box-shadow .2s, background .2s;
+}
+
+.cta a:hover {
+  background: var(--red-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 14px 36px rgba(177,18,38,0.6);
+}
+
+/* ====== FOOTER ====== */
+footer {
+  position: relative;
+  z-index: 1;
+  background: #fff;
+  text-align: center;
+  padding: 40px 20px;
+  font-size: 14px;
+  color: #777;
+}
+</style>
+</head>
+
+<body>
+
+<!-- PLUJÍCÍ SRDÍČKA -->
+<div class="hearts">
+  <span class="heart" style="left:10%; animation-duration:12s;">❤</span>
+  <span class="heart" style="left:25%; animation-duration:16s;">❤</span>
+  <span class="heart" style="left:40%; animation-duration:14s;">❤</span>
+  <span class="heart" style="left:55%; animation-duration:18s;">❤</span>
+  <span class="heart" style="left:70%; animation-duration:13s;">❤</span>
+  <span class="heart" style="left:85%; animation-duration:20s;">❤</span>
+</div>
+
+<header>
+  <h1>Název webu</h1>
+  <p>Emoce, vášeň, srdce</p>
+</header>
+
+<section>
+  <div class="cards">
+    <div class="card">
+      <h3>Sekce 1</h3>
+      <p>Obsah doplníš později.</p>
+    </div>
+    <div class="card">
+      <h3>Sekce 2</h3>
+      <p>Obsah doplníš později.</p>
+    </div>
+    <div class="card">
+      <h3>Sekce 3</h3>
+      <p>Obsah doplníš později.</p>
+    </div>
+  </div>
+</section>
+
+<div class="cta">
+  <a href="#">Call to action</a>
+</div>
+
+<footer>
+  © 2026 • rudý srdíčkový web
+</footer>
+
+</body>
+</html>
+
